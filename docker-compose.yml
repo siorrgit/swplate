@@ -1,0 +1,51 @@
+# volumes:
+#   maildir:
+
+services:
+  db:
+    container_name: swplate_db
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress:
+    container_name: swplate_wordpress
+    image: wordpress:latest
+    depends_on:
+      - db
+    ports:
+      - "8000:80"
+    volumes:
+      - ./public:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DEBUG: true
+      WORDPRESS_CONFIG_EXTRA: define('WP_ENVIRONMENT_TYPE', 'local');
+
+  phpmyadmin:
+    container_name: swplate_phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    depends_on:
+      - db
+    ports:
+      - 8888:80
+
+  # mailhog:
+  #   image: mailhog/mailhog
+  #   container_name: web_shiga_plusone_mailhog
+  #   ports:
+  #     - "1025:1025"
+  #     - "8025:8025"
+  #   environment:
+  #     MH_STORAGE: maildir
+  #     MH_MAILDIR_PATH: /tmp
+  #     MAIL_HOST: mailhog
+  #     MAIL_PORT: 1025
+  #     MAIL_FROM_ADDRESS: noreply@example.com
+  #   volumes:
+  #     - maildir:/tmp

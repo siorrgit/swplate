@@ -1,0 +1,55 @@
+{
+  "private": true,
+  "name": "swplate",
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "scripts": {
+    "start": "run-s clean build dev",
+    "dev": "run-p bs watch",
+    "bs": "browser-sync start --config bs-config.js",
+    "build": "run-s css.build js.build",
+    "watch": "run-p css.watch js.watch",
+    "release": "run-s clean css.release js.release",
+    "clean": "run-s css.clean js.clean",
+    "sass.build": "sass src/scss:tmp/css --embed-source-map -s compressed",
+    "sass.watch": "sass src/scss:tmp/css --embed-source-map -s compressed --watch",
+    "sass.release": "sass src/scss:tmp/css --no-source-map -s compressed",
+    "autoprefixer.build": "postcss tmp/css/pages --use autoprefixer --base tmp/css/pages -d public/wp-content/themes/2023/assets/css",
+    "autoprefixer.watch": "postcss tmp/css/pages --use autoprefixer --base tmp/css/pages -d public/wp-content/themes/2023/assets/css -w",
+    "autoprefixer.release": "postcss tmp/css/pages --use autoprefixer --base tmp/css/pages -d public/wp-content/themes/2023/assets/css --no-map",
+    "css.build": "run-s sass.build autoprefixer.build",
+    "css.watch": "run-p sass.watch autoprefixer.watch",
+    "css.release": "run-s sass.release autoprefixer.release",
+    "css.clean": "rimraf tmp/css public/wp-content/themes/2023/assets/css",
+    "js.build": "webpack -c webpack.dev.js",
+    "js.watch": "webpack -c webpack.dev.js -w",
+    "js.release": "webpack -c webpack.prod.js",
+    "js.clean": "rimraf public/wp-content/themes/2023/assets/js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "browser-sync": "^2.27.11",
+    "css-loader": "^6.7.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.1.0",
+    "rimraf": "^4.1.2",
+    "sass": "^1.57.1",
+    "style-loader": "^3.3.1",
+    "stylelint": "^14.16.1",
+    "stylelint-config-recess-order": "^3.1.0",
+    "stylelint-config-recommended-scss": "^8.0.0",
+    "stylelint-scss": "^4.3.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "scroll-behavior-polyfill": "^2.0.13",
+    "swiper": "^8.4.7",
+    "yakuhanjp": "^3.4.1"
+  },
+  "volta": {
+    "node": "18.13.0"
+  }
+}

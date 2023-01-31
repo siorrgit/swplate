@@ -1,0 +1,18 @@
+/**
+ * Effect Class
+ */
+
+@use '../vars' as *;
+
+.-effect-slideIn {
+  transition: 1s;
+
+  &.-duration-2500 {
+    transition: 2.5s;
+  }
+
+  &:not(.-shown) {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}

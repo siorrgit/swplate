@@ -1,0 +1,69 @@
+/**
+ * PageTop Style
+ */
+
+@use '../vars' as *;
+@use 'vars' as pageTop;
+@use '../../functions/size';
+
+.pageTop {
+  position: sticky;
+  z-index: z-index(pageTop);
+  width: 100%;
+  height: 0;
+  transition: .2s;
+  @media #{media-query(sm)} {
+    bottom: size.liquid(30);
+  }
+  @media #{media-query(md)} {
+    bottom: 45px;
+  }
+  @media #{media-query(lg)} {
+    bottom: 60px;
+  }
+
+  &:not(.-shown) {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &-button {
+    position: absolute;
+    cursor: pointer;
+    background: #CCCCCC;
+    border-radius: 50%;
+    @media #{media-query(sm)} {
+      top: size.liquid(-15);
+      right: size.liquid(20);
+      width: size.liquid(30);
+      height: size.liquid(30);
+    }
+    @media #{media-query(md)} {
+      top: -21px;
+      right: calc(50% - 360px);
+      width: 40px;
+      height: 40px;
+    }
+    @media #{media-query(lg)} {
+      top: -27px;
+      right: calc(50% - 580px);
+      width: 50px;
+      height: 50px;
+    }
+
+    @media (hover: hover) {
+      transition: .25s;
+      &:hover {
+        background: #333333;
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: #fff;
+      object-fit: contain;
+      object-position: center center;
+    }
+  }
+}

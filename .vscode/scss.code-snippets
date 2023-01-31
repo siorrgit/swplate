@@ -1,0 +1,50 @@
+{
+  "Media Query": {
+    "prefix": "mq",
+    "body": [
+      "@media #{media-query(sm)} {",
+      "}",
+      "@media #{media-query(md)} {",
+      "}",
+      "@media #{media-query(lg)} {",
+      "}"
+    ],
+    "description": "Media Query"
+  },
+  "&-xxxx": {
+    "prefix": "&-",
+    "body": [
+      "&-$1 {",
+      "  @media #{media-query(sm)} {",
+      "  }",
+      "  @media #{media-query(md)} {",
+      "  }",
+      "  @media #{media-query(lg)} {",
+      "  }",
+      "}"
+    ],
+    "description": "&-xxxx"
+  },
+  "Anchor text mixin": {
+    "prefix": "anc",
+    "body": [
+      "@include text.anchor($$color: $1${2:, $$hover: });"
+    ],
+    "description": "Anchor text mixin"
+  },
+  "Object-fit": {
+    "prefix": "ofi",
+    "body": [
+      "object-fit: ${1:cover};",
+      "object-position: ${2:center center};"
+    ],
+    "description": "Object-fit"
+  },
+  "liquid function": {
+    "prefix": "lq",
+    "body": [
+      "size.liquid($1)"
+    ],
+    "description": "liquid function"
+  }
+}

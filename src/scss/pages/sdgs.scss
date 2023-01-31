@@ -1,0 +1,24 @@
+/**
+ * SDGs
+ */
+
+@use '../global/vars' as *;
+@use '../global';
+@use '../components/pageTitle';
+@use '../functions/size';
+@use '../mixins/hover';
+@use '../mixins/text';
+
+/**
+ * ----------------------------------------------------------------------------
+ * SDGs
+ * ----------------------------------------------------------------------------
+ */
+.sdgs {
+  @media #{media-query(sm)} {
+  }
+  @media #{media-query(md)} {
+  }
+  @media #{media-query(lg)} {
+  }
+}

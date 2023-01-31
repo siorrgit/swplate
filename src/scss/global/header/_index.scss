@@ -1,0 +1,139 @@
+/**
+ * Header Style
+ */
+
+@use '../vars' as *;
+@use 'vars' as header;
+@use '../../mixins/button';
+@use '../../mixins/hover';
+@use '../../mixins/text';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: z-index(header);
+  width: 100%;
+  background: rgba(#fff, .9);
+  transition: .25s;
+  @media #{media-query(sm)} {
+    height: header.height(sm);
+  }
+  @media #{media-query(md)} {
+    height: header.height(md);
+  }
+  @media #{media-query(lg)} {
+    height: header.height(lg);
+  }
+
+  &.-hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  &-logo {
+    position: absolute;
+    @media #{media-query(sm)} {
+      top: 12px;
+      left: 15px;
+      width: 179px;
+      height: 36px;
+    }
+    @media #{media-query(md)} {
+      top: 12px;
+      left: 15px;
+      width: 179px;
+      height: 36px;
+    }
+    @media #{media-query(lg)} {
+      top: 19px;
+      left: calc(50% - 587px);
+      width: 211px;
+      height: 38px;
+    }
+
+    &-a {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      @media (hover: hover) {
+        transition: .25s;
+        &:hover {
+          opacity: .85;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center center;
+      }
+    }
+  }
+
+  &-nav {
+    position: absolute;
+    top: 0;
+    right: calc(50% - 630px);
+    height: 100%;
+
+    &-list {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      & > li {
+
+        & > a {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 20px;
+          padding: 0 20px;
+          font-size: 14px;
+          font-weight: 700;
+          text-indent: .03em;
+          letter-spacing: .03em;
+          @include text.anchor($color: #5F5E5E, $hover: $blue);
+        }
+        &:not(:first-child) > a {
+          padding-left: 21px;
+          &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 1px;
+            height: 20px;
+            content: "";
+            border-left: 1px solid #5F5E5E;
+          }
+        }
+      }
+    }
+  }
+
+  &-toggle {
+    @include button.hamburger(
+      $container-width: 60px,
+      $container-height: 60px,
+      $width: 40px,
+      $height: 21px,
+      $bar-width: 1px,
+      $bar-color: #707070,
+    );
+
+    position: absolute;
+    @media #{media-query(sm)} {
+      top: 0;
+      right: 10px;
+    }
+    @media #{media-query(md)} {
+      top: 0;
+      right: 10px;
+    }
+  }
+}

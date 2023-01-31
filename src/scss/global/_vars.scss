@@ -1,0 +1,78 @@
+/**
+ * Global Variables
+ */
+
+/**
+ * ----------------------------------------------------------------------------
+ * Color
+ * ----------------------------------------------------------------------------
+ */
+$black: #000;
+$green: #08573F;
+$blue: #00A6B9;
+$orange: #E68645;
+
+/**
+ * ----------------------------------------------------------------------------
+ * Font
+ * ----------------------------------------------------------------------------
+ */
+$sans:
+  "YakuHanJP",
+  "Noto Sans",
+  "Noto Sans CJK JP",
+  "Noto Sans CJK JP Subset",
+  sans-serif;
+
+$montserrat: 'Montserrat', sans-serif;
+
+// $sans:
+//   "Helvetica Neue",
+//   "Arial",
+//   "Hiragino Kaku Gothic ProN",
+//   "Hiragino Sans",
+//   "BIZ UDPGothic",
+//   "Meiryo",
+//   sans-serif;
+
+// $serif: serif;
+
+$size: 16px;
+
+/**
+ * ----------------------------------------------------------------------------
+ * WordPress Theme Name
+ * ----------------------------------------------------------------------------
+ */
+$wp-theme-name: '2022';
+
+/**
+ * ----------------------------------------------------------------------------
+ * Media Query
+ * ----------------------------------------------------------------------------
+ */
+$media-query: (
+  sm: '(max-width: 767px)',
+  md: '(min-width: 768px) and (max-width: 1279px)',
+  lg: '(min-width: 1280px)'
+);
+@function media-query($width) {
+  @return map-get($media-query, $width);
+}
+
+/**
+ * ----------------------------------------------------------------------------
+ * Z Index
+ * ----------------------------------------------------------------------------
+ */
+$z-index: (
+  logo: 40,
+  header: 30,
+  drawer: 20,
+  drawer-base: 10,
+  pageTop: 5,
+  pageTitle: 1,
+);
+@function z-index($element) {
+  @return map-get($z-index, $element);
+}

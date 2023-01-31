@@ -1,0 +1,75 @@
+/**
+ * Pager
+ */
+
+@use '../global/vars' as *;
+@use '../functions/size';
+@use '../mixins/shape';
+
+.pager {
+  display: flex;
+  justify-content: center;
+  font-family: $montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  color: #323232;
+  @media #{media-query(sm)} {
+    height: size.liquid(100);
+    padding: size.liquid(40) 0 0;
+  }
+  @media #{media-query(md)} {
+    height: 120px;
+    padding: 48px 0 0;
+  }
+  @media #{media-query(lg)} {
+    height: 140px;
+    padding: 52px 0 0;
+  }
+
+  &-prev,
+  &-next {
+    width: 18px;
+    height: 18px;
+    &.-disabled {
+      visibility: hidden;
+    }
+  }
+
+  &-prev {
+    margin-right: 28px;
+    @media (hover: hover) {
+      &:not(.-current) {
+        transition: .25s;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  &-next {
+    margin-left: 30px;
+    @media (hover: hover) {
+      &:not(.-current) {
+        transition: .25s;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  &-page {
+    & + & {
+      margin-left: 28px;
+    }
+    @media (hover: hover) {
+      &:not(.-current) {
+        transition: .25s;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+}

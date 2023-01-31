@@ -1,0 +1,43 @@
+/**
+ * Utility Class
+ */
+
+@use '../vars' as *;
+
+/**
+ * ----------------------------------------------------------------------------
+ * Show/Hide by Viewport Width
+ * ----------------------------------------------------------------------------
+ */
+@media #{media-query(sm)} {
+  .md:not(.sm),
+  .lg:not(.sm) {
+    display: none;
+  }
+}
+@media #{media-query(md)} {
+  .sm:not(.md),
+  .lg:not(.md) {
+    display: none;
+  }
+}
+@media #{media-query(lg)} {
+  .sm:not(.lg),
+  .md:not(.lg) {
+    display: none;
+  }
+}
+
+/**
+ * ----------------------------------------------------------------------------
+ * For detecting scroll position
+ * ----------------------------------------------------------------------------
+ */
+.scroll-marker {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+  visibility: hidden;
+}

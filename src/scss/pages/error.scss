@@ -1,0 +1,19 @@
+/**
+ * Error
+ */
+
+@use '../global/vars' as *;
+@use '../global';
+@use '../mixins/button';
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media #{media-query(sm)} {
+  }
+  @media #{media-query(md)} {
+  }
+  @media #{media-query(lg)} {
+  }
+}

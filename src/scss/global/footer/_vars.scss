@@ -1,0 +1,14 @@
+/**
+ * Footer Variables
+ */
+
+@use '../../functions/size';
+
+$height: (
+  sm: size.liquid(240),
+  md: 180px,
+  lg: 200px,
+);
+@function height($media) {
+  @return map-get($height, $media);
+}

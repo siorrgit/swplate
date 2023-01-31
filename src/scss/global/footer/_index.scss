@@ -1,0 +1,120 @@
+/**
+ * Footer Style
+ */
+
+@use '../vars' as *;
+@use 'vars' as footer;
+@use '../../functions/size';
+@use '../../mixins/hover';
+@use '../../mixins/text';
+
+.footer {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid #707070;
+  @media #{media-query(sm)} {
+    height: footer.height(sm);
+    padding: size.liquid(24) size.liquid(20) 0;
+  }
+  @media #{media-query(md)} {
+    height: footer.height(md);
+  }
+  @media #{media-query(lg)} {
+    height: footer.height(lg);
+  }
+
+  &-logo {
+    display: block;
+    @media #{media-query(sm)} {
+      width: size.liquid(200);
+      height: size.liquid(40);
+    }
+    @media #{media-query(md)} {
+      position: absolute;
+      top: 30px;
+      left: calc(50% - 320px);
+      width: 200px;
+      height: 40px;
+    }
+    @media #{media-query(lg)} {
+      position: absolute;
+      top: 56px;
+      left: calc(50% - 530px);
+      width: 281px;
+      height: 56px;
+    }
+
+    img {
+      object-fit: contain;
+      object-position: center center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    flex-wrap: wrap;
+    @media #{media-query(sm)} {
+      width: size.liquid(312);
+      margin: 30px size.liquid(-14) 0;
+    }
+    @media #{media-query(md)} {
+      position: absolute;
+      top: 34px;
+      left: 50%;
+      width: 380px;
+      margin: 0 -20px;
+    }
+    @media #{media-query(lg)} {
+      position: absolute;
+      top: 70px;
+      left: 50%;
+      width: 624px;
+      margin: 0 -24px;
+    }
+
+    & > li {
+
+      & > a {
+        @include text.anchor($color: #5F5E5E, $hover: $blue);
+        display: block;
+        letter-spacing: .03em;
+        @media #{media-query(sm)} {
+          padding: size.liquid(6) size.liquid(14);
+          font-size: size.liquid(10);
+        }
+        @media #{media-query(md)} {
+          padding: 8px 20px;
+          font-size: 12px;
+        }
+        @media #{media-query(lg)} {
+          padding: 10px 24px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  &-copyright {
+    color: #323232;
+    @media #{media-query(sm)} {
+      margin: size.liquid(26) 0 0;
+      font-size: size.liquid(10);
+    }
+    @media #{media-query(md)} {
+      position: absolute;
+      top: 100px;
+      left: calc(50% - 320px);
+      padding: 0 0 0 4px;
+      font-size: 10px;
+    }
+    @media #{media-query(lg)} {
+      position: absolute;
+      top: 140px;
+      left: calc(50% - 530px);
+      padding: 0 0 0 8px;
+      font-size: 11px;
+    }
+  }
+}

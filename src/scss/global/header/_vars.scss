@@ -1,0 +1,14 @@
+/**
+ * Header Variables
+ */
+
+@use '../../functions/size';
+
+$height: (
+  sm: 60px,
+  md: 60px,
+  lg: 80px
+);
+@function height($media) {
+  @return map-get($height, $media);
+}

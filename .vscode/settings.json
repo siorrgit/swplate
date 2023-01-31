@@ -1,0 +1,9 @@
+{
+  "phpsab.executablePathCS": "/Users/itokuchen/.composer/vendor/squizlabs/php_codesniffer/bin/phpcs",
+  "phpsab.executablePathCBF": "/Users/itokuchen/.composer/vendor/squizlabs/php_codesniffer/bin/phpcbf",
+  "phpsab.standard": "WordPress-Extra",
+  "[php]": {
+      "editor.formatOnSave": true
+  },
+  "editor.insertSpaces": false
+}
