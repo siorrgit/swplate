@@ -1,5 +1,5 @@
 module.exports = {
-  context: `${__dirname}/src/js`,
+  context: `${__dirname}/../src/js`,
   entry: {
     global: './global/index.js',
     front: './pages/front.js',
@@ -13,7 +13,7 @@ module.exports = {
     ],
   },
   output: {
-    path: `${__dirname}/public/wp-content/themes/2023/assets/js`,
+    path: `${__dirname}/../public/wp-content/themes/2023/assets/js`,
     clean: true
   }
 };

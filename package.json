@@ -22,9 +22,9 @@
     "css.watch": "npm run sass.watch & npm run autoprefixer.watch",
     "css.release": "npm run sass.release && npm run autoprefixer.release",
     "css.clean": "rimraf tmp/css public/wp-content/themes/2023/assets/css",
-    "js.build": "webpack -c webpack.dev.js",
-    "js.watch": "webpack -c webpack.dev.js -w",
-    "js.release": "webpack -c webpack.prod.js",
+    "js.build": "webpack -c build/webpack.dev.js",
+    "js.watch": "webpack -c build/webpack.dev.js -w",
+    "js.release": "webpack -c build/webpack.prod.js",
     "js.clean": "rimraf public/wp-content/themes/2023/assets/js"
   },
   "devDependencies": {
