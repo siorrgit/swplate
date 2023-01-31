@@ -1,8 +1,8 @@
 /**
- * Effect Class
+ * Global Effect
  */
 
-@use '../vars' as *;
+@use 'vars' as *;
 
 .-effect-slideIn {
   transition: 1s;

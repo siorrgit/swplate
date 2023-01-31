@@ -1,11 +1,9 @@
 /**
- * Drawer Style
+ * Global Drawer
  */
 
-@use '../vars' as *;
-@use '../header/vars' as header;
-@use '../../functions/size';
-@use '../../mixins/text';
+@use 'vars' as *;
+@use '../mixins/text';
 
 .drawer {
   position: absolute;

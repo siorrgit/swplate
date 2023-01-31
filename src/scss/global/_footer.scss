@@ -1,26 +1,25 @@
 /**
- * Footer Style
+ * Global Footer
  */
 
-@use '../vars' as *;
-@use 'vars' as footer;
-@use '../../functions/size';
-@use '../../mixins/hover';
-@use '../../mixins/text';
+@use 'vars' as *;
+@use '../functions/size';
+@use '../mixins/hover';
+@use '../mixins/text';
 
 .footer {
   position: relative;
   width: 100%;
   border-top: 1px solid #707070;
   @media #{media-query(sm)} {
-    height: footer.height(sm);
+    height: $footer-height-sm;
     padding: size.liquid(24) size.liquid(20) 0;
   }
   @media #{media-query(md)} {
-    height: footer.height(md);
+    height: $footer-height-md;
   }
   @media #{media-query(lg)} {
-    height: footer.height(lg);
+    height: $footer-height-lg;
   }
 
   &-logo {

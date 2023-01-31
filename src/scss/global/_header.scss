@@ -1,12 +1,11 @@
 /**
- * Header Style
+ * Global Header
  */
 
-@use '../vars' as *;
-@use 'vars' as header;
-@use '../../mixins/button';
-@use '../../mixins/hover';
-@use '../../mixins/text';
+@use 'vars' as *;
+@use '../mixins/button';
+@use '../mixins/hover';
+@use '../mixins/text';
 
 .header {
   position: fixed;
@@ -17,13 +16,13 @@
   background: rgba(#fff, .9);
   transition: .25s;
   @media #{media-query(sm)} {
-    height: header.height(sm);
+    height: $header-height-sm;
   }
   @media #{media-query(md)} {
-    height: header.height(md);
+    height: $header-height-md;
   }
   @media #{media-query(lg)} {
-    height: header.height(lg);
+    height: $header-height-lg;
   }
 
   &.-hidden {

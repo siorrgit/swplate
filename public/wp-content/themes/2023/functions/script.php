@@ -3,7 +3,7 @@
  * CSS・JavaScriptの読み込み
  *
  * CSS:
- * 1ページ1CSSを割り当て
+ * 1ページ2CSSを割り当て
  *
  * JavaScript:
  * 全ページ共通global.js + ページ別JS
@@ -24,6 +24,7 @@ add_action('wp_enqueue_scripts', function() {
   }
 
   // global
+  add_css('global', '/assets/css/global.css');
   add_js('global', '/assets/js/global.js');
 
   if (is_front_page()) {

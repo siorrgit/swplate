@@ -1,10 +1,9 @@
 /**
- * PageTop Style
+ * Global PageTop
  */
 
-@use '../vars' as *;
-@use 'vars' as pageTop;
-@use '../../functions/size';
+@use 'vars' as *;
+@use '../functions/size';
 
 .pageTop {
   position: sticky;

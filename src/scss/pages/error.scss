@@ -1,10 +1,8 @@
 /**
- * Error
+ * Error Page
  */
 
 @use '../global/vars' as *;
-@use '../global';
-@use '../mixins/button';
 
 .error {
   display: flex;
